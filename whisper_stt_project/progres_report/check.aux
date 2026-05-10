@@ -1,0 +1,87 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{hinton2012deep}
+\citation{radford2022whisper}
+\citation{radford2022whisper}
+\citation{davis1980comparison}
+\citation{mcfee2015librosa}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Project Goal}{1}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Scope of This Report}{1}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background and Related Work}{1}{section.2}\protected@file@percent }
+\newlabel{sec:background}{{2}{1}{Background and Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Whisper}{1}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Spectro-temporal Features}{1}{subsection.2.2}\protected@file@percent }
+\citation{brandenburg1999mp3}
+\citation{xiph2004vorbis}
+\citation{coalson2008flac}
+\citation{radford2022whisper}
+\citation{panayotov2015librispeech}
+\citation{mcfee2015librosa}
+\citation{brandenburg1999mp3,xiph2004vorbis,coalson2008flac}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces High-level architecture of the speech-to-text pipeline. Each sub-module can be invoked independently from the CLI driver (\texttt  {src/main.py}) or imported from another Python program.\relax }}{2}{figure.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:arch}{{1}{2}{High-level architecture of the speech-to-text pipeline. Each sub-module can be invoked independently from the CLI driver (\texttt {src/main.py}) or imported from another Python program.\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Audio Compression}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}System Design}{2}{section.3}\protected@file@percent }
+\newlabel{sec:design}{{3}{2}{System Design}{section.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Accomplishments to Date}{2}{section.4}\protected@file@percent }
+\newlabel{sec:accomplishments}{{4}{2}{Accomplishments to Date}{section.4}{}}
+\newlabel{lst:transcriber}{{1}{2}{Core of \texttt {transcriber.py} -- lazy model loading and a typed result}{lstlisting.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Core of \texttt  {transcriber.py} -- lazy model loading and a typed result.}{2}{lstlisting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Future Steps}{2}{section.5}\protected@file@percent }
+\newlabel{sec:future}{{5}{2}{Future Steps}{section.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Real-data evaluation.}{2}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Compression vs.\ recognition trade-off.}{3}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Optional GUI.}{3}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Final report and demo.}{3}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Challenges and Remedies}{3}{section.6}\protected@file@percent }
+\newlabel{sec:challenges}{{6}{3}{Challenges and Remedies}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}FFmpeg dependency}{3}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Whisper model size vs.\ memory}{3}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Round-trip frame-count mismatch}{3}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Reproducibility}{3}{subsection.6.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Time-domain waveform of the 5-second synthetic test signal.\relax }}{3}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:wave}{{2}{3}{Time-domain waveform of the 5-second synthetic test signal.\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Log-amplitude mel-spectrogram (128 mel bins). The ascending diagonal is the chirp, the constant horizontal band is the AM tone.\relax }}{3}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:mel}{{3}{3}{Log-amplitude mel-spectrogram (128 mel bins). The ascending diagonal is the chirp, the constant horizontal band is the AM tone.\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Deviations from the original plan}{3}{subsection.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Supporting Data and Early Results}{3}{section.7}\protected@file@percent }
+\newlabel{sec:results}{{7}{3}{Supporting Data and Early Results}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Visualisation Output}{3}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Compression Benchmark}{3}{subsection.7.2}\protected@file@percent }
+\bibcite{radford2022whisper}{1}
+\bibcite{hinton2012deep}{2}
+\bibcite{davis1980comparison}{3}
+\bibcite{mcfee2015librosa}{4}
+\bibcite{brandenburg1999mp3}{5}
+\bibcite{xiph2004vorbis}{6}
+\bibcite{coalson2008flac}{7}
+\bibcite{panayotov2015librispeech}{8}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Twenty MFCC coefficients computed on the same signal.\relax }}{4}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:mfcc}{{4}{4}{Twenty MFCC coefficients computed on the same signal.\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Zero-crossing rate (top) and short-time RMS energy (bottom) of the test signal.\relax }}{4}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:zcr}{{5}{4}{Zero-crossing rate (top) and short-time RMS energy (bottom) of the test signal.\relax }{figure.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Round-trip compression metrics on a 5-second synthetic test clip (16\nobreakspace  {}kHz, 16-bit, mono).\relax }}{4}{table.caption.11}\protected@file@percent }
+\newlabel{tab:compression}{{1}{4}{Round-trip compression metrics on a 5-second synthetic test clip (16~kHz, 16-bit, mono).\relax }{table.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces File size (bars) and round-trip PSNR (red line) for the three target codecs. FLAC's PSNR is clipped at the top of the right axis as it is mathematically infinite.\relax }}{4}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:compression}{{6}{4}{File size (bars) and round-trip PSNR (red line) for the three target codecs. FLAC's PSNR is clipped at the top of the right axis as it is mathematically infinite.\relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Reproducibility}{4}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{4}{section.8}\protected@file@percent }
+\gdef \@abspage@last{4}

@@ -1,0 +1,22 @@
+# Core speech-to-text engine
+openai-whisper>=20231117
+
+# Audio I/O and DSP
+librosa>=0.10.1
+soundfile>=0.12.1
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Plotting
+matplotlib>=3.7.0
+
+# Compression / format conversion
+pydub>=0.25.1
+
+# Optional: progress bars
+tqdm>=4.65.0
+
+# Note: pydub requires the `ffmpeg` binary to be installed on the system
+#       (apt install ffmpeg / brew install ffmpeg / choco install ffmpeg).
+# Note: openai-whisper depends on PyTorch (torch); it will be installed
+#       automatically as a transitive dependency.

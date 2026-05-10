@@ -1,0 +1,38 @@
+[
+  {
+    "source_path": "/sessions/upbeat-compassionate-allen/mnt/outputs/whisper_stt_project/samples/synthetic_demo.wav",
+    "target_path": "/sessions/upbeat-compassionate-allen/mnt/outputs/whisper_stt_project/outputs/synthetic_demo.flac",
+    "target_format": "flac",
+    "bitrate": "\u2014",
+    "source_kb": 156.29296875,
+    "target_kb": 127.4482421875,
+    "ratio": 1.2263250247113182,
+    "rmse": 0.0,
+    "psnr_db": Infinity,
+    "lossless": true
+  },
+  {
+    "source_path": "/sessions/upbeat-compassionate-allen/mnt/outputs/whisper_stt_project/samples/synthetic_demo.wav",
+    "target_path": "/sessions/upbeat-compassionate-allen/mnt/outputs/whisper_stt_project/outputs/synthetic_demo.mp3",
+    "target_format": "mp3",
+    "bitrate": "64k",
+    "source_kb": 156.29296875,
+    "target_kb": 39.9814453125,
+    "ratio": 3.9091375393859455,
+    "rmse": 0.01636262386041174,
+    "psnr_db": 31.920149793886065,
+    "lossless": false
+  },
+  {
+    "source_path": "/sessions/upbeat-compassionate-allen/mnt/outputs/whisper_stt_project/samples/synthetic_demo.wav",
+    "target_path": "/sessions/upbeat-compassionate-allen/mnt/outputs/whisper_stt_project/outputs/synthetic_demo.ogg",
+    "target_format": "ogg",
+    "bitrate": "64k",
+    "source_kb": 156.29296875,
+    "target_kb": 24.7900390625,
+    "ratio": 6.304668111089226,
+    "rmse": 0.01282293394043778,
+    "psnr_db": 34.03746063642426,
+    "lossless": false
+  }
+]
