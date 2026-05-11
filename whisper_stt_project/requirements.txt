@@ -20,3 +20,5 @@ tqdm>=4.65.0
 #       (apt install ffmpeg / brew install ffmpeg / choco install ffmpeg).
 # Note: openai-whisper depends on PyTorch (torch); it will be installed
 #       automatically as a transitive dependency.
+
+sounddevice

@@ -29,10 +29,10 @@ import soundfile as sf
 if __package__ in (None, ""):
     THIS_DIR = Path(__file__).resolve().parent
     sys.path.insert(0, str(THIS_DIR.parent))
-    from src import compressor, transcriber, visualizer
+    from src import compressor, listener, transcriber, visualizer
     from src.utils import ensure_dir
 else:                                                       # pragma: no cover
-    from . import compressor, transcriber, visualizer
+    from . import compressor, listener, transcriber, visualizer
     from .utils import ensure_dir
 
 
@@ -92,6 +92,24 @@ def cmd_transcribe(args: argparse.Namespace) -> None:
         print(f"SubRip            : {srt}")
     print("---- TEXT ----")
     print(result.text)
+
+
+def cmd_listen(args: argparse.Namespace) -> None:
+    print(f"Loading Whisper model '{args.model}'...")
+    t = transcriber.WhisperTranscriber(
+        model_name=args.model, device=args.device, language=args.language)
+    
+    print(f"Listening... (Press Ctrl+C to stop)")
+    print("-" * 30)
+    
+    try:
+        with listener.MicrophoneListener(sample_rate=16_000) as mic:
+            for chunk in mic.listen(chunk_duration=args.chunk_size):
+                result = t.transcribe(chunk)
+                if result.text.strip():
+                    print(f"[{result.language}] {result.text}")
+    except KeyboardInterrupt:
+        print("\nStopped by user.")
 
 
 def cmd_visualize(args: argparse.Namespace) -> None:
@@ -227,6 +245,18 @@ def build_parser() -> argparse.ArgumentParser:
                     help="Also run Whisper on the synthetic clip.")
     pd.add_argument("--model", default="base")
     pd.set_defaults(func=cmd_demo)
+
+    # listen ----------------------------------------------------------- #
+    pl = sub.add_parser("listen", help="Transcribe live audio from microphone")
+    pl.add_argument("--model", default="base",
+                    choices=["tiny", "base", "small", "medium", "large",
+                             "large-v2", "large-v3"])
+    pl.add_argument("--language", default=None,
+                    help="ISO-639-1 code, e.g. 'en'. None = auto-detect.")
+    pl.add_argument("--device", default=None, help="'cpu' / 'cuda' / None")
+    pl.add_argument("--chunk-size", type=float, default=3.0,
+                    help="Duration of each audio chunk to transcribe (seconds)")
+    pl.set_defaults(func=cmd_listen)
 
     return p
 

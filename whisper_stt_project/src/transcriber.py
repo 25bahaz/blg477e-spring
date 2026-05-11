@@ -13,6 +13,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+import numpy as np
+
 from .utils import ensure_dir, format_timestamp
 
 logger = logging.getLogger(__name__)
@@ -98,15 +100,28 @@ class WhisperTranscriber:
         logger.info("Whisper model %s ready.", self.model_name)
 
     def transcribe(self,
-                   audio_path: str | Path,
+                   audio: str | Path | np.ndarray,
                    verbose: bool = False) -> TranscriptionResult:
-        """Run Whisper on *audio_path* and return a :class:`TranscriptionResult`."""
+        """Run Whisper on *audio* and return a :class:`TranscriptionResult`.
+
+        Parameters
+        ----------
+        audio:
+            Path to an audio file OR a 1D float32 numpy array of samples
+            at 16kHz.
+        verbose:
+            Whether to print Whisper's progress.
+        """
         self._load()
-        audio_path = str(audio_path)
-        logger.info("Transcribing %s ...", audio_path)
+        if isinstance(audio, (str, Path)):
+            audio_input = str(audio)
+            logger.info("Transcribing file %s ...", audio_input)
+        else:
+            audio_input = audio
+            logger.info("Transcribing raw audio buffer (%d samples) ...", len(audio))
 
         result = self._model.transcribe(
-            audio_path,
+            audio_input,
             language=self.language,
             verbose=verbose,
             fp16=False,  # safe default on CPU
