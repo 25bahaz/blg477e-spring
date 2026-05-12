@@ -1,0 +1,38 @@
+[
+  {
+    "source_path": "C:\\Users\\ismail\\Documents\\blg477e-spring\\LibriSpeech\\test-clean\\61\\70968\\61-70968-0000.flac",
+    "target_path": "C:\\Users\\ismail\\Documents\\blg477e-spring\\whisper_stt_project\\outputs\\61-70968-0000.flac",
+    "target_format": "flac",
+    "bitrate": "\u2014",
+    "source_kb": 94.880859375,
+    "target_kb": 94.6796875,
+    "ratio": 1.0021247627692054,
+    "rmse": 0.0,
+    "psnr_db": Infinity,
+    "lossless": true
+  },
+  {
+    "source_path": "C:\\Users\\ismail\\Documents\\blg477e-spring\\LibriSpeech\\test-clean\\61\\70968\\61-70968-0000.flac",
+    "target_path": "C:\\Users\\ismail\\Documents\\blg477e-spring\\whisper_stt_project\\outputs\\61-70968-0000.mp3",
+    "target_format": "mp3",
+    "bitrate": "64k",
+    "source_kb": 94.880859375,
+    "target_kb": 39.4189453125,
+    "ratio": 2.406986250464511,
+    "rmse": 0.0022081402954691326,
+    "psnr_db": 41.812894989342404,
+    "lossless": false
+  },
+  {
+    "source_path": "C:\\Users\\ismail\\Documents\\blg477e-spring\\LibriSpeech\\test-clean\\61\\70968\\61-70968-0000.flac",
+    "target_path": "C:\\Users\\ismail\\Documents\\blg477e-spring\\whisper_stt_project\\outputs\\61-70968-0000.ogg",
+    "target_format": "ogg",
+    "bitrate": "64k",
+    "source_kb": 94.880859375,
+    "target_kb": 33.58203125,
+    "ratio": 2.825346050948005,
+    "rmse": 0.0027144666198846974,
+    "psnr_db": 40.01973814194892,
+    "lossless": false
+  }
+]

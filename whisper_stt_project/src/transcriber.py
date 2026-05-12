@@ -115,10 +115,10 @@ class WhisperTranscriber:
         self._load()
         if isinstance(audio, (str, Path)):
             audio_input = str(audio)
-            logger.info("Transcribing file %s ...", audio_input)
+            logger.debug("Transcribing file %s ...", audio_input)
         else:
             audio_input = audio
-            logger.info("Transcribing raw audio buffer (%d samples) ...", len(audio))
+            logger.debug("Transcribing raw audio buffer (%d samples) ...", len(audio))
 
         result = self._model.transcribe(
             audio_input,

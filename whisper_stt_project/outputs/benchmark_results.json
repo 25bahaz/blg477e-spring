@@ -1,0 +1,20 @@
+{
+  "tiny": {
+    "wer": 0.08098752282410225,
+    "total_time_seconds": 1104.8764169216156,
+    "avg_time_per_sample": 0.4217085560769525,
+    "samples_count": 2620
+  },
+  "base": {
+    "wer": 0.0595899269628728,
+    "total_time_seconds": 1997.9103152751923,
+    "avg_time_per_sample": 0.762561189036333,
+    "samples_count": 2620
+  },
+  "small": {
+    "wer": 0.04224360925136945,
+    "total_time_seconds": 5825.475992441177,
+    "avg_time_per_sample": 2.2234641192523577,
+    "samples_count": 2620
+  }
+}

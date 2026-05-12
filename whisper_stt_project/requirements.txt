@@ -22,3 +22,4 @@ tqdm>=4.65.0
 #       automatically as a transitive dependency.
 
 sounddevice
+jiwer>=3.0.3
