@@ -1,19 +1,3 @@
-"""Audio compression / decompression utilities.
-
-The module wraps :mod:`pydub` (which itself wraps ``ffmpeg``) to convert
-between WAV (PCM, lossless) and three popular target formats:
-
-* ``flac`` — lossless, smaller than WAV
-* ``mp3``  — lossy, configurable bitrate (default 64 k for speech)
-* ``ogg``  — lossy Vorbis, configurable quality
-
-For every conversion we report:
-
-* original / compressed file sizes [kB]
-* compression ratio (original / compressed)
-* round-trip RMSE and PSNR after decompressing back to PCM (this measures
-  the perceptual cost of lossy codecs and confirms losslessness for FLAC).
-"""
 from __future__ import annotations
 
 import logging

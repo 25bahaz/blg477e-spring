@@ -1,4 +1,3 @@
-"""Helper that draws a bar chart of size + PSNR for the report."""
 from __future__ import annotations
 
 import json

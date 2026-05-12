@@ -1,9 +1,3 @@
-"""Audio visualisation utilities.
-
-Each ``plot_*`` function takes an audio file path (any format supported by
-``librosa``) and writes a high-DPI PNG that is suitable for direct inclusion
-in the LaTeX progress report.
-"""
 from __future__ import annotations
 
 import logging

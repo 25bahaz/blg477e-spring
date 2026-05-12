@@ -45,9 +45,3 @@ python src/main.py transcribe samples/speech.wav --model base --srt
 python src/main.py visualize  samples/speech.wav
 python src/main.py compress   samples/speech.wav --target mp3 --bitrate 64k
 ```
-
-## Authors
-
-`[Your Name]` — `[Student ID]`
-Course: `[Course Code – Multimedia Computing]`
-Instructor: Ali Altan

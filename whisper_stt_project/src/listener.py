@@ -1,8 +1,3 @@
-"""Real-time microphone capture for live transcription.
-
-Uses ``sounddevice`` to pull audio from the default input device and
-buffers it for the transcriber.
-"""
 from __future__ import annotations
 
 import logging
@@ -17,16 +12,6 @@ logger = logging.getLogger(__name__)
 
 
 class MicrophoneListener:
-    """Listens to the default microphone and yields audio chunks.
-
-    Parameters
-    ----------
-    sample_rate:
-        Target sample rate. Whisper expects 16000.
-    block_duration:
-        Duration of each audio block in seconds.
-    """
-
     def __init__(self, sample_rate: int = 16_000, block_duration: float = 0.5):
         self.sample_rate = sample_rate
         self.block_size = int(sample_rate * block_duration)
@@ -56,7 +41,6 @@ class MicrophoneListener:
         self._stream.start()
 
     def stop(self):
-        """Stop the audio stream."""
         if self._stream:
             self._stream.stop()
             self._stream.close()
@@ -64,10 +48,6 @@ class MicrophoneListener:
         logger.info("Microphone stream stopped.")
 
     def listen(self, chunk_duration: float = 3.0):
-        """Generator that yields audio chunks of *chunk_duration* seconds.
-
-        This will block until enough data is collected for a chunk.
-        """
         blocks_per_chunk = int(chunk_duration / (self.block_size / self.sample_rate))
         if blocks_per_chunk < 1:
             blocks_per_chunk = 1

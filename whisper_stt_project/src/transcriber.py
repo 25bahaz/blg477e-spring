@@ -1,10 +1,3 @@
-"""Whisper-based speech-to-text wrapper.
-
-The class :class:`WhisperTranscriber` lazily loads a Whisper model the first
-time :meth:`transcribe` is called.  It returns the raw Whisper result *and*
-provides convenience methods for writing plain-text and SubRip (``.srt``)
-files for the project demos.
-"""
 from __future__ import annotations
 
 import json
@@ -51,20 +44,6 @@ class TranscriptionResult:
 
 
 class WhisperTranscriber:
-    """Thin wrapper around ``openai-whisper``.
-
-    Parameters
-    ----------
-    model_name:
-        One of ``tiny``, ``base``, ``small``, ``medium``, ``large``,
-        ``large-v2``, ``large-v3``.
-    device:
-        ``"cuda"``, ``"cpu"`` or ``None`` for auto-detect.
-    language:
-        ISO-639-1 code (e.g. ``"en"``, ``"tr"``) or ``None`` to let Whisper
-        auto-detect from the first 30 seconds.
-    """
-
     def __init__(self,
                  model_name: str = "base",
                  device: Optional[str] = None,

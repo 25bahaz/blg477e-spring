@@ -1,19 +1,3 @@
-"""Command-line driver for the Whisper Speech-to-Text project.
-
-Run ``python -m src.main --help`` from the project root to see all
-sub-commands.
-
-Sub-commands
-------------
-* ``transcribe AUDIO``        Whisper -> .txt / .srt / .json
-* ``visualize AUDIO``         waveform / mel / mfcc / zcr+rms PNGs
-* ``compress AUDIO``          one-format compression with metrics
-* ``benchmark AUDIO``         compare flac / mp3 / ogg side-by-side
-* ``demo``                    synthesise a 5-second test signal and run
-                              the full pipeline end-to-end (no audio file
-                              required) – useful for quickly producing
-                              figures for the report.
-"""
 from __future__ import annotations
 
 import argparse
@@ -52,12 +36,6 @@ def _setup_logging(verbose: bool) -> None:
 def _make_synthetic_speech(out_path: Path,
                            duration: float = 5.0,
                            sr: int = 16_000) -> Path:
-    """Create a synthetic test signal — a chirp + amplitude-modulated tone.
-
-    Whisper of course will not produce meaningful text from this, but it
-    exercises every visualisation and compression code path so the demo
-    can run on a CI machine without any audio assets.
-    """
     t = np.linspace(0, duration, int(sr * duration), endpoint=False)
     chirp = 0.4 * np.sin(2 * np.pi * (200 + 500 * t / duration) * t)
     tone = 0.2 * np.sin(2 * np.pi * 880 * t) * (0.5 + 0.5 * np.sin(2 * np.pi * 3 * t))
@@ -144,8 +122,6 @@ def cmd_benchmark(args: argparse.Namespace) -> None:
 
 
 def cmd_demo(args: argparse.Namespace) -> None:
-    """End-to-end smoke run on a synthetic signal — never needs ffmpeg
-    nor whisper to demonstrate visualisation / compression."""
     samples_dir = ensure_dir(PROJECT_ROOT / "samples")
     figures_dir = ensure_dir(PROJECT_ROOT / "figures")
     outputs_dir = ensure_dir(PROJECT_ROOT / "outputs")
